@@ -1,0 +1,12 @@
+body{
+    background-color: #c9d1d686;
+    height: inherit;
+    width: inherit;
+    padding: 20PX;
+    margin: 20px;
+border-radius: 15px;
+border: #000000d7 solid 4px;
+text-align: justify;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}

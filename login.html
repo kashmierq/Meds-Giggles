@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <title>Tailwind + Flowbite</title>
+    <script src="https://cdn.tailwindcss.com"></script><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#38761D', 
+                        'secondary-pink': '#FEE8E9', 
+                        'accent-red': '#E96677',  
+                        'neutral-light': '#FAF5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+
+            <a href="#" class="text-3xl font-display font-bold text-accent-red">
+                Meds-Giggles
+            </a>
+
+            <nav class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="home.html" class="hover:text-accent-red transition duration-150">Home</a>
+                <a href="cart.html" class="hover:text-accent-red transition duration-150">Products</a>
+                <a href="#" class="hover:text-accent-red transition duration-150">Cart</a>
+                <a href="login.html" class="hover:text-accent-red transition duration-150">Login</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-red">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <a href="home.html" class="block px-4 py-2 text-primary-green hover:bg-secondary-pink">Home</a>
+            <a href="cart.html" class="block px-4 py-2 text-primary-green hover:bg-secondary-pink">Products</a>
+            <a href="#" class="block px-4 py-2 text-primary-green hover:bg-secondary-pink">Cart</a>
+            <a href="login.html" class="block px-4 py-2 text-primary-green hover:bg-secondary-pink">Login</a>
+        </div>
+    </header>
+<body>
+    <section class="bg-gray-50 dark:bg-gray-900">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+        
+      </a>
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"> 
+                <img src="./Screenshot 2025-10-14 161504.png" alt="haha">
+                 Meds-Giggles
+              </h1>
+              <form class="space-y-4 md:space-y-6" action="#">
+                  <div>
+                      <label for="Email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                      <input type="Email" name="Email" id="Email" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" placeholder="Please enter your email">
+                  </div>
+                  <div>
+                      <label for="Password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                      <input type="Password" name="Password" id="Password"  class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""
+                      placeholder="Please enter your password">
+                   <div class="flex items-start">
+                      <div class="flex items-center h-5">
+                        <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                      </div>
+                      <div id="terms" class="ml-3 text-sm">
+                        <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="./terms&condition.html">Terms and Conditions</a></label>
+                      </div>
+                   </div>
+                    <button id="signin" onclick="login() " type="button" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                    </div>
+                      Don’t have an account yet? <a href="registration.html" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+                  </p>
+              </form>
+          </div>
+      </div>
+  </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+</body>
+</html>

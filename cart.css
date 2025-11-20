@@ -1,0 +1,14 @@
+body{
+    background-color: #daf3f2bd;
+    height: inherit;    
+    width: inherit;
+}
+
+header{
+    background-color: #d5e3e9;
+    box-shadow: 0 4px 6px rgb(223, 233, 235);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
