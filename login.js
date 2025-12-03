@@ -1,14 +1,27 @@
-document.getElementById("signin").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("Email").value;
-    const password = document.getElementById("Password").value;
+function login() {
 
-    if (email === "Medsgiggles@.gmail.com" && password === "meds") {
-        document.getElementById("signin").textContent = "Login Successful! Welcome.";
-        document.getElementById("email").textContent = "Medsgiggles@.gmail.com";
-        document.getElementById("password").textContent = "meds";
-         } else {
-            document.getElementById("signin").textContent = "Invalid log in";
-         }
-        }
-    );
+    let email = document.getElementById("Email").value;
+    console.log("You enter:" + " " + email);
+
+    if (email === "kashmierquinones@gmail.com") { 
+        console.log("Your email is correct!");
+    } else {
+        console.log("Your email is incorrect!");
+    }
+
+    let password = document.getElementById("Password").value;
+    console.log("You enter:" + " " + password);
+
+    if (password === "mamamo") {
+     console.log("Your password is correct!")   
+    } else {
+        console.log("You password is incorrect!");
+    } 
+
+    if (email === "kashmierquinones@gmail.com" && password === "mamamo") {
+        console.log("Your email and password are correct!");
+    } else {
+         console.log("Your email and password are incorrect! Please change.");
+    }
+    
+}
