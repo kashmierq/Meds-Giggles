@@ -64,3 +64,11 @@ label{
 div{
     padding: 4px;
 }
+
+#log{
+    color: darkgreen;
+}
+
+#regis{
+    color: darkgreen;
+}
