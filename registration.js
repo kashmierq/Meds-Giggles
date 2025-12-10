@@ -1,4 +1,4 @@
-function login() {
+function signup() {
 
     let email = document.getElementById("Email").value;
     console.log("You enter:" + " " + email);

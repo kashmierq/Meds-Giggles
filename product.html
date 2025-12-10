@@ -3,355 +3,338 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="cart">
   <title>Products</title>
-   <script src="https://cdn.tailwindcss.com"></script><script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-green': '#38761D', 
-                        'secondary-pink': '#FEE8E9', 
-                        'accent-red': '#E96677',  
-                        'neutral-light': '#FAF5F5',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-green': '#38761D',
+            'secondary-pink': '#FEE8E9',
+            'accent-red': '#E96677',
+            'neutral-light': '#FAF5F5',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          }
         }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-        
-        .shadow-soft {
-            box-shadow: 0 10px 15px -3px rgba(164, 220, 235, 0.966), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .flower-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .flower-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(146, 185, 230, 0.979), 0 8px 10px -6px rgba(233, 102, 119, 0.1);
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:wght@400..900&display=swap');
+
+    .shadow-soft {
+        box-shadow: 0 10px 15px -3px rgba(164, 220, 235, 0.966), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .flower-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .flower-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(146, 185, 230, 0.979), 0 8px 10px -6px rgba(233, 102, 119, 0.1);
+    }
+  </style>
 </head>
+
 <header class="bg-white shadow-md sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="home.html" class="text-3xl font-display font-bold text-accent-red">Meds-Giggles</a>
 
-            <a href="#" class="text-3xl font-display font-bold text-accent-red">
-                Meds-Giggles
-            </a>
+      <nav class="hidden md:flex space-x-8 text-lg font-medium">
+          <a href="home.html" class="hover:text-accent-red">Home</a>
+          <a href="product.html" class="hover:text-accent-red">Products</a>
+          <a href="cart.html" class="hover:text-accent-red">Cart</a>
+          <a href="login.html" class="hover:text-accent-red">Log in</a>
+      </nav>
+  </div>
+</header>
 
-            <nav class="hidden md:flex space-x-8 text-lg font-medium">
-                <a href="home.html" class="hover:text-accent-red transition duration-150">Home</a>
-                <a href="product.html" class="hover:text-accent-red transition duration-150">Products</a>
-                <a href="cart.html" class="hover:text-accent-red transition duration-150">Cart</a>
-                <a href="login.html" class="hover:text-accent-red transition duration-150">Login</a>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-red">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+<body class="bg-neutral-light">
+
+
+<div id="product-sections">
+
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-center font-display text-5xl font-bold mb-12 text-accent-red">
+        Our Best-Time Medicines
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div class="flower-card bg-white p-6 rounded-xl shadow-soft border" 
+          data-name="Aspirin" data-price="2.50" data-img="med1.png">
+          <img src="med1.png" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Aspirin</h3>
+          <p>Pain relief, fever reduction, anti-inflammatory, blood thinner.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱2.50</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">
+              Add to Cart
             </button>
+          </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <a href="home.html" class="block px-4 py-2 text-primary-green hover:bg-secondary-pink">Home</a>
-            <a href="product.html" class="block px-4 py-2 text-primary-green hover:bg-secondary-pink">Products</a>
-            <a href="cart.html" class="block px-4 py-2 text-primary-green hover:bg-secondary-pink">Cart</a>
-            <a href="login.html" class="block px-4 py-2 text-primary-green hover:bg-secondary-pink">Login</a>
+        <div class="flower-card bg-white p-6 rounded-xl shadow-soft border" 
+          data-name="Ibuprofen 90g" data-price="90" data-img="med2.png">
+          <img src="med2.png" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Ibuprofen 90g</h3>
+          <p>Pain relief, fever reducer, anti-inflammatory.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱90</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">
+              Add to Cart
+            </button>
+          </div>
         </div>
-    </header>
 
-<body>
-  <section class="py-16 sm:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-center font-display text-4xl sm:text-5xl font-bold mb-12 text-accent-red">
-                    Our Best-Time Medicines
-                </h2>
+        <div class="flower-card bg-white p-6 rounded-xl shadow-soft border" 
+          data-name="Cetirizine" data-price="16.25" data-img="med3.png">
+          <img src="med3.png" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Cetirizine</h3>
+          <p>Antihistamine for allergies.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱16.25</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">
+              Add to Cart
+            </button>
+          </div>
+        </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                   <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="he"
-                            src="./med1.png" 
-                            alt="hihihi"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?Meds-Giggles';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Aspirin</h3>
-                        <p class="text-gray-600 mb-4">Pain relief, fever reduction, anti-inflammatory, and blood thinner (often for heart conditions).</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱2.50</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                         <img id="ha"
-                            src="./med2.png" 
-                            alt="hihi"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=Bouquet+2';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Ibufropen 90g</h3>
-                        <p class="text-gray-600 mb-4">Pain relief, fever reduction, and anti-inflammatory (for headaches, muscle pain, menstrual cramps, etc.).</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱90</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./med3.png" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Cetirizine</h3>
-                        <p class="text-gray-600 mb-4">Antihistamine for allergies like sneezing, runny nose, itchy eyes, and hives.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱16.25</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./med3.png" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Diatabs</h3>
-                        <p class="text-gray-600 mb-4">Treats diarrhea by slowing down bowel movement.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱8.50</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./med3.png" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Kremil-S</h3>
-                        <p class="text-gray-600 mb-4"> Relieves hyperacidity, stomach pain, and gas.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱9</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./med3.png" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Biogesic</h3>
-                        <p class="text-gray-600 mb-4">Same as paracetamol—fever and pain relief.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱5</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-</body>
-<body>
-  <section class="py-16 sm:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-center font-display text-4xl sm:text-5xl font-bold mb-12 text-accent-red">
-                    Beauty Products
-                </h2>
+        <div class="flower-card bg-white p-6 rounded-xl shadow-soft border" 
+          data-name="Diatabs" data-price="8.50" data-img="med3.png">
+          <img src="med3.png" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Diatabs</h3>
+          <p>Treats diarrhea by slowing bowel movement.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱8.50</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">
+              Add to Cart
+            </button>
+          </div>
+        </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                   <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="he"
-                            src="./beu1.avif" 
-                            alt="hihihi"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?Meds-Giggles';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Celeteque Hydration Facial Wash (60mL)</h3>
-                        <p class="text-gray-600 mb-4">Gently cleanses the face without drying; ideal for daily use on sensitive skin.
-</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱2.50</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                         <img id="ha"
-                            src="./beu2.webp" 
-                            alt="hihi"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=Bouquet+2';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Belo Whitening Lotion (100mL)</h3>
-                        <p class="text-gray-600 mb-4">Moisturizes and helps lighten skin tone with SPF for sun protection.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱150</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./beu3.avif" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Eskinol Facial Cleanser (135mL)</h3>
-                        <p class="text-gray-600 mb-4">Removes deep-seated dirt and excess oil; often used after washing the face.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱79.50</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./beu1.avif" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Myra E Vitamin E Capsules (30s)</h3>
-                        <p class="text-gray-600 mb-4">Oral supplement for healthy, glowing skin; antioxidant-rich for skin repair.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱349.50</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./beu2.webp" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Pond’s Bright Beauty Facial Foam (100g</h3>
-                        <p class="text-gray-600 mb-4">Deep cleanses and brightens skin; helps reduce dullness and dark spots.
-</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱130</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./beu3.avif" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Human Nature Sunflower Beauty Oil (50mL)</h3>
-                        <p class="text-gray-600 mb-4">Multi-use oil for moisturizing face, body, lips, and even stretch marks.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱180</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-</body>
-</body>
-<body>
-  <section class="py-16 sm:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-center font-display text-4xl sm:text-5xl font-bold mb-12 text-accent-red">
-                    Children’s Care Products
-                </h2>
+        <div class="flower-card bg-white p-6 rounded-xl shadow-soft border" 
+          data-name="Kremil-S" data-price="9" data-img="med3.png">
+          <img src="med3.png" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Kremil-S</h3>
+          <p>Relieves hyperacidity and gas.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱9</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">
+              Add to Cart
+            </button>
+          </div>
+        </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                   <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="he"
-                            src="./beu1.avif" 
-                            alt="hihihi"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?Meds-Giggles';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Johnson’s Baby Shampoo (200mL)</h3>
-                        <p class="text-gray-600 mb-4">Gentle cleanser for baby’s hair and scalp; tear-free formula.
-</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱135</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                         <img id="ha"
-                            src="./beu2.webp" 
-                            alt="hihi"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=Bouquet+2';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Cetaphil Baby Daily Lotion (200mL)</h3>
-                        <p class="text-gray-600 mb-4">Moisturizes baby’s skin; ideal for sensitive or dry skin.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱400</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./chil3.avif" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Off!  Lotion (50mL)</h3>
-                        <p class="text-gray-600 mb-4">Protects children from mosquito bites; safe for daily use.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱79.50</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./beu3.avif" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Vicks BabyRub (50g)</h3>
-                        <p class="text-gray-600 mb-4">Soothing rub for colds and cough; helps ease stuffy nose and discomfort</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱170</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="./chil2.webp" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Tempra Paracetamol Drops (15mL)</h3>
-                        <p class="text-gray-600 mb-4">Fever and pain relief for infants; easy to administer.
-</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">70</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                     <div class="flower-card bg-white p-6 rounded-xl shadow-soft border border-gray-100">
-                        <img id="ho"
-                            src="chil3.avif" 
-                            alt="A mix of succulents in a ceramic pot"
-                            class="w-full h-48 object-cover rounded-lg mb-4"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x300/E96677/FAF5F5?text=wah';"
-                        >
-                        <h3 class="text-2xl font-semibold mb-2 text-primary-green">Tiny Buds Natural Baby Toothgel (30g)</h3>
-                        <p class="text-gray-600 mb-4">Fluoride-free, swallow-safe toothpaste for babies; gentle on gums.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold text-accent-red">₱130</span>
-                            <button class="bg-primary-green text-white px-4 py-2 rounded-full text-sm hover:bg-primary-green/80 transition duration-150">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="flower-card bg-white p-6 rounded-xl shadow-soft border" 
+          data-name="Biogesic" data-price="5" data-img="med3.png">
+          <img src="med3.png" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Biogesic</h3>
+          <p>Fever and pain relief.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱5</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-center font-display text-5xl font-bold mb-12 text-accent-red">
+        Beauty Products
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Celeteque Hydration Facial Wash" data-price="2.50" data-img="beu1.avif">
+          <img src="beu1.avif" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Celeteque Facial Wash</h3>
+          <p>Gentle cleanser for daily use.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱2.50</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Belo Whitening Lotion" data-price="150" data-img="beu2.webp">
+          <img src="beu2.webp" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Belo Whitening Lotion</h3>
+          <p>Moisturizes & lightens skin tone.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱150</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Eskinol Facial Cleanser" data-price="79.50" data-img="beu3.avif">
+          <img src="beu3.avif" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Eskinol Facial Cleanser</h3>
+          <p>Removes deep-seated dirt & excess oil.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱79.50</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Myra E Capsules" data-price="349.50" data-img="beu1.avif">
+          <img src="beu1.avif" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Myra E Vitamin Capsules</h3>
+          <p>Antioxidant supplement for glowing skin.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱349.50</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Pond’s Bright Beauty Facial Foam" data-price="130" data-img="beu2.webp">
+          <img src="beu2.webp" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Pond’s Bright Facial Foam</h3>
+          <p>Brightens skin & reduces dullness.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱130</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Human Nature Sunflower Oil" data-price="180" data-img="beu3.avif">
+          <img src="beu3.avif" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Human Nature Sunflower Oil</h3>
+          <p>Moisturizing beauty oil for face & body.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱180</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-center font-display text-5xl font-bold mb-12 text-accent-red">
+        Children's Care Products
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Johnson’s Baby Shampoo" data-price="135" data-img="beu1.avif">
+          <img src="beu1.avif" class="w-full h-48 rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Johnson’s Baby Shampoo</h3>
+          <p>Gentle tear-free shampoo.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱135</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Cetaphil Baby Lotion" data-price="400" data-img="beu2.webp">
+          <img src="beu2.webp" class="w-full h-48 rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Cetaphil Baby Lotion</h3>
+          <p>Moisturizes baby’s sensitive skin.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱400</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Off! Lotion" data-price="79.50" data-img="chil3.avif">
+          <img src="chil3.avif" class="w-full h-48 rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Off! Lotion</h3>
+          <p>Protects kids from mosquito bites.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱79.50</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Vicks BabyRub" data-price="170" data-img="beu3.avif">
+          <img src="beu3.avif" class="w-full h-48 rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Vicks BabyRub</h3>
+          <p>Soothing rub for colds.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱170</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Tempra Paracetamol Drops" data-price="70" data-img="chil2.webp">
+          <img src="chil2.webp" class="w-full h-48 rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Tempra Paracetamol Drops</h3>
+          <p>Pain & fever relief for infants.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱70</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="flower-card bg-white p-6 shadow-soft rounded-xl border"
+          data-name="Tiny Buds Baby Toothgel" data-price="130" data-img="chil3.avif">
+          <img src="chil3.avif" class="w-full h-48 rounded-lg mb-4">
+          <h3 class="text-2xl font-semibold">Tiny Buds Baby Toothgel</h3>
+          <p>Fluoride-free swallow-safe toothpaste.</p>
+          <div class="flex justify-between mt-4">
+            <span class="text-xl font-bold text-accent-red">₱130</span>
+            <button class="add-cart bg-primary-green text-white px-4 py-2 rounded-full">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+  const buttons = document.querySelectorAll(".add-cart");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      
+      const card = btn.closest(".flower-card");
+      const product = {
+        name: card.dataset.name,
+        price: parseFloat(card.dataset.price),
+        img: card.dataset.img,
+        qty: 1
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const exists = cart.find(item => item.name === product.name);
+      if (exists) {
+        exists.qty += 1;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+
+      window.location.href = "cart.html";
+
+    });
+  });
+</script>
 </body>
 </html>
